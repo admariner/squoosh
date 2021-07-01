@@ -1,14 +1,17 @@
 # libavif and libaom versions are from
 # https://docs.google.com/document/d/1wEEA5rRU7wT54k41u3qyZIZHDCJArIMzLuzsrLAwaK8/edit
-CODEC_URL = https://github.com/AOMediaCodec/libavif/archive/d37ef74127986184500e571bf1f9793cc0bdef50.tar.gz
+CODEC_URL = https://github.com/AOMediaCodec/libavif/archive/1c39e772c2c0d687691dd4b589a12c323f5f767d.tar.gz
 CODEC_PACKAGE = node_modules/libavif.tar.gz
 
-LIBAOM_URL = https://aomedia.googlesource.com/aom/+archive/0a5da45c7f942908974f5ab8e107c9fa82048ae7.tar.gz
+LIBAOM_URL = https://aomedia.googlesource.com/aom/+archive/v3.1.0.tar.gz
 LIBAOM_PACKAGE = node_modules/libaom.tar.gz
 
 export CODEC_DIR = node_modules/libavif
 export BUILD_DIR = node_modules/build
 export LIBAOM_DIR = node_modules/libaom
+
+override CFLAGS += "-Wno-unused-macros"
+export
 
 OUT_ENC_JS = enc/avif_enc.js
 OUT_NODE_ENC_JS = enc/avif_node_enc.js
